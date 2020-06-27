@@ -1,0 +1,10 @@
+[Unit]
+Description=Lunch server
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/lunchserv 8686
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
