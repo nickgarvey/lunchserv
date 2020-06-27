@@ -26,7 +26,7 @@ func (handler *lunchHandler) ServeHTTP(writer http.ResponseWriter, request *http
 			log.Println("Error: ", err)
 			return
 		}
-		matched, err := regexp.Match("https://drd\\.sh/cart/[a-zA-Z0-9]/?", body)
+		matched, err := regexp.Match("^https://drd\\.sh/cart/[a-zA-Z0-9]+/?$", body)
 		if !matched {
 			errStr := "Invalid URL: " + string(body)
 			http.Error(writer, errStr, 400)
